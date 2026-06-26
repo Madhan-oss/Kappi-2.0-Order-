@@ -86,6 +86,9 @@ from (values
   ('Cake',     50, '🎂', 5),
   ('Muffin',   40, '🧁', 6),
   ('Horlick',  30, '🍵', 7),
-  ('Boost',    30, '💪', 8)
+  ('Boost',    30, '💪', 8),
+  ('Veg Puff', 30, '🥟', 9),
+  ('Mushroom Puff', 30, '🥟', 10),
+  ('Samosa',   20, '🥟', 11)
 ) as v(name, price, icon, position)
 where not exists (select 1 from menu_items where menu_items.name = v.name);
