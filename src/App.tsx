@@ -59,9 +59,7 @@ export default function App() {
   const selectedOrder = selectedMemberId ? getOrder(selectedMemberId) : null
   const selectedItems: Record<string, number> = selectedOrder?.items ?? {}
 
-  const grandTotal = orders.reduce((sum, o) => {
-    return sum + menuItems.reduce((s, mi) => s + (o.items[mi.name] || 0) * mi.price, 0)
-  }, 0)
+
 
   // ── Quantity change (persist via API) ─────────────────────────
   const handleQuantityChange = useCallback(async (itemName: string, qty: number) => {
