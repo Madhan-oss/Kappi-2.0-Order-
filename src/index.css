@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #FFFDF7;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #3d1a06;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #e2d5c3; border-radius: 4px; }
+
+/* ─── Print ─────────────────────────────────────────────── */
+@media print {
+  header, aside, button, .no-print { display: none !important; }
+  main { padding: 0 !important; }
+}
+
+/* ─── Staggered children animation utility ───────────────── */
+.stagger-children > *:nth-child(1)  { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2)  { animation-delay: 50ms; }
+.stagger-children > *:nth-child(3)  { animation-delay: 100ms; }
+.stagger-children > *:nth-child(4)  { animation-delay: 150ms; }
+.stagger-children > *:nth-child(5)  { animation-delay: 200ms; }
+.stagger-children > *:nth-child(6)  { animation-delay: 250ms; }
+.stagger-children > *:nth-child(7)  { animation-delay: 300ms; }
+.stagger-children > *:nth-child(8)  { animation-delay: 350ms; }
+.stagger-children > *:nth-child(9)  { animation-delay: 400ms; }
+.stagger-children > *:nth-child(10) { animation-delay: 450ms; }
+.stagger-children > *:nth-child(11) { animation-delay: 500ms; }
+.stagger-children > *:nth-child(12) { animation-delay: 550ms; }
+
+/* ─── Glass / Backdrop utilities ─────────────────────────── */
+.glass {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ─── Qty button micro-animation ─────────────────────────── */
+.qty-btn:active:not(:disabled) {
+  transform: scale(0.85);
+}
+
+/* ─── Card hover lift ─────────────────────────────────────── */
+.menu-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.menu-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139,69,19,0.12);
+}
+
+/* ─── Member row hover ────────────────────────────────────── */
+.member-row {
+  transition: background 0.15s ease, border-left-color 0.15s ease;
+}
+.member-row:hover {
+  background: #fff7ed !important;
+}
+
+/* ─── Tab underline transition ───────────────────────────── */
+.nav-tab {
+  transition: color 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+.nav-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0; right: 0;
+  height: 2px;
+  border-radius: 1px;
+  background: #8B4513;
+  transform: scaleX(0);
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+.nav-tab.active::after {
+  transform: scaleX(1);
+}
+
+/* ─── Skeleton shimmer ───────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, #f5ede0 25%, #fde8cc 50%, #f5ede0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* ─── Toggle switch smooth ───────────────────────────────── */
+.toggle-thumb {
+  transition: left 0.2s cubic-bezier(0.34,1.56,0.64,1);
+}
+.toggle-track {
+  transition: background 0.2s ease;
+}
+
+/* ─── Modal backdrop ─────────────────────────────────────── */
+.modal-backdrop {
+  animation: fadeIn 0.2s ease both;
+}
+.modal-sheet {
+  animation: slideUp 0.4s cubic-bezier(0.16,1,0.3,1) both;
+}
+
+/* ─── Input focus glow ───────────────────────────────────── */
+.kappi-input:focus {
+  outline: none;
+  border-color: #8B4513 !important;
+  box-shadow: 0 0 0 3px rgba(139,69,19,0.12);
+}
+
+/* ─── Responsive grid ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .main-grid { grid-template-columns: 1fr !important; }
+  .main-grid > aside:last-child { display: none !important; }
+}
+@media (max-width: 600px) {
+  .main-grid > aside:first-child { position: static !important; }
+  .mobile-summary-btn { display: block !important; }
+}
+.mobile-summary-btn { display: none; }
