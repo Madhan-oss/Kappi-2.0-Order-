@@ -284,19 +284,6 @@ export default function App() {
 
           {/* Right: total + mobile summary btn */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <div
-              style={{
-                background: '#fff7ed',
-                border: '1px solid #fed7aa',
-                borderRadius: 20,
-                padding: '4px 14px',
-                fontSize: 13,
-                fontWeight: 700,
-                color: '#c2410c',
-              }}
-            >
-              ₹<AnimatedNumber value={grandTotal} />
-            </div>
             <button
               onClick={() => setShowMobileSummary((v) => !v)}
               className="mobile-summary-btn"
