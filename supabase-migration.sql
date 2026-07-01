@@ -81,7 +81,7 @@ select v.name, v.price, v.icon, v.position
 from (values
   ('Tea',      20, '☕', 1),
   ('Coffee',   25, '☕', 2),
-  ('Egg Puff', 35, '🥚', 3),
+  ('Egg Puff', 40, '🥚', 3),
   ('Milk',     20, '🥛', 4),
   ('Cake',     50, '🎂', 5),
   ('Muffin',   40, '🧁', 6),
