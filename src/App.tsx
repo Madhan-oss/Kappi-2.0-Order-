@@ -262,7 +262,7 @@ export default function App() {
                 ☕
               </div>
               <span style={{ fontWeight: 900, fontSize: 17, color: '#3d1a06', letterSpacing: '-0.02em' }}>
-                Kappi 2.0 Order
+                Kappi 2.0
               </span>
             </div>
 
